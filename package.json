@@ -1,0 +1,18 @@
+{
+  "name": "job-board-express-json",
+  "version": "1.0.0",
+  "description": "Job Board Express/EJS avec des offres JSON lues côté serveur",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1"
+  }
+}

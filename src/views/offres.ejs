@@ -1,1 +1,84 @@
-<h1> <%= offres %> </h1>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container nav-flex">
+            <a href="/offres" class="logo">
+                Job<span>Board</span>
+            </a>
+
+            <nav>
+                <a href="/offres" class="nav-link active">Offres</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-main">
+
+        <h1>Liste des offres</h1>
+
+        <% offres.forEach(offre => { %>
+
+            <article class="job-card">
+
+                <div class="card-header">
+                    <div>
+                        <span class="badge">
+                            <%= offre.typeContrat %>
+                        </span>
+
+                        <h2><%= offre.titre %></h2>
+
+                        <p class="company">
+                            <%= offre.entreprise %> • <%= offre.ville %>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tags">
+                    <% offre.technologies.forEach(technology => { %>
+                        <span class="tag">
+                            <%= technology %>
+                        </span>
+                    <% }); %>
+                </div>
+
+                <div>
+                    <p>
+                        <%= offre.descriptionCourte %>
+                    </p>
+                </div>
+
+                <div class="card-footer">
+                    <small>
+                        <%= offre.datePublication || "Récemment" %>
+                    </small>
+
+                    <a href="/offres/<%= offre.id %>" class="btn">
+                        Voir détails
+                    </a>
+                </div>
+
+            </article>
+
+        <% }); %>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>© 2026 Job Board - Abdelilah Meski</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -7,7 +7,13 @@ const data = fs.readFileSync("./data/offres.json", "utf-8");
 const offres = JSON.parse(data);
 
 router.get("/", (req, res) => {
-    res.render("offres", {offres: offres});
+    const  ville = req.query.ville;
+    let result = offres
+    if (ville) {
+        result = offres.filter(offre => offre.ville === ville);
+    }
+    
+    res.render("offres", {offres: result});
 });
 
 router.get("/:id", (req, res) => {

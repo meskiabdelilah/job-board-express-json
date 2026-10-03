@@ -22,11 +22,35 @@
         </div>
     </header>
 
+    <section class="hero-banner">
+        <div class="text-center">
+            <h1>Trouvez votre Stage ou Alternance</h1>
+            <p>Spécialement conçu pour les apprenants en Développement Web</p>
+
+            <form action="/offres" method="GET" class="search-box">
+                <select name="ville">
+                    <option value="">Toutes les villes</option>
+                    <option value="Casablanca">Casablanca</option>
+                    <option value="Rabat">Rabat</option>
+                    <option value="Marrakech">Marrakech</option>
+                    <option value="Oujda">Oujda</option>
+                    <option value="Tanger">Tanger</option>
+                    <option value="Agadir">Agadir</option>
+                    <option value="Fès">Fès</option>
+                    <option value="Nador">Nador</option>
+                </select>
+
+                <button type="submit" class="btn">
+                    Filtrer
+                </button>
+            </form>
+        </div>
+    </section>
     <main class="container page-main">
 
         <h1>Liste des offres</h1>
 
-        <% offres.forEach(offre => { %>
+        <% offres.forEach(offre=> { %>
 
             <article class="job-card">
 
@@ -36,7 +60,9 @@
                             <%= offre.typeContrat %>
                         </span>
 
-                        <h2><%= offre.titre %></h2>
+                        <h2>
+                            <%= offre.titre %>
+                        </h2>
 
                         <p class="company">
                             <%= offre.entreprise %> • <%= offre.ville %>
@@ -45,11 +71,11 @@
                 </div>
 
                 <div class="tags">
-                    <% offre.technologies.forEach(technology => { %>
+                    <% offre.technologies.forEach(technology=> { %>
                         <span class="tag">
                             <%= technology %>
                         </span>
-                    <% }); %>
+                        <% }); %>
                 </div>
 
                 <div>
@@ -70,7 +96,7 @@
 
             </article>
 
-        <% }); %>
+            <% }); %>
 
     </main>
 
@@ -81,4 +107,5 @@
     </footer>
 
 </body>
+
 </html>

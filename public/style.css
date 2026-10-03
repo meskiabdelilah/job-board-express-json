@@ -30,7 +30,7 @@ body {
   text-align: center;
 }
 
-/* Header */
+/* HEADER */
 
 .navbar {
   background: var(--white);
@@ -65,14 +65,14 @@ body {
   color: var(--primary);
 }
 
-/* Main */
+/* MAIN */
 
 .page-main {
   margin-top: 30px;
   margin-bottom: 50px;
 }
 
-.page-main h1 {
+.page-main > h1 {
   margin-bottom: 25px;
 }
 
@@ -84,14 +84,59 @@ body {
   margin-bottom: 15px;
 }
 
-/* Cards */
+/* HERO */
+
+.hero-banner {
+  background: var(--dark);
+  color: white;
+  padding: 45px 30px;
+  margin-bottom: 35px;
+}
+
+.hero-banner h1 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.hero-banner p {
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
+/* SEARCH / FILTER */
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.search-box select {
+  flex: 1;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  font-size: 0.95rem;
+  background: white;
+}
+
+/* CARDS */
 
 .job-card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 22px;
+  margin-bottom: 18px;
+  transition: 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.08);
 }
 
 .card-header {
@@ -108,7 +153,73 @@ body {
   font-size: 0.95rem;
 }
 
-/* Offre detail */
+/* BADGE */
+
+.badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* TECHNOLOGIES */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.tag {
+  background: #f1f5f9;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* CARD FOOTER */
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  margin-top: 15px;
+  padding-top: 15px;
+}
+
+.card-footer small {
+  color: var(--text-muted);
+}
+
+/* BUTTONS */
+
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  padding: 9px 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.search-box .btn {
+  padding: 11px 20px;
+}
+
+/* OFFRE DETAIL */
 
 .job-card-lg {
   padding: 30px;
@@ -138,62 +249,7 @@ body {
   padding-top: 0;
 }
 
-/* Badge */
-
-.badge {
-  display: inline-block;
-  background: #dbeafe;
-  color: #1e40af;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-/* Technologies */
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 15px 0;
-}
-
-.tag {
-  background: #f1f5f9;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-}
-
-/* Footer de la card */
-
-.card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid var(--border);
-  margin-top: 15px;
-  padding-top: 15px;
-}
-
-.card-footer small {
-  color: var(--text-muted);
-}
-
-/* Bouton */
-
-.btn {
-  display: inline-block;
-  background: var(--primary);
-  color: white;
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-size: 0.9rem;
-}
-
-/* Footer page */
+/* FOOTER PAGE */
 
 .footer {
   background: var(--white);
@@ -203,27 +259,53 @@ body {
   color: var(--text-muted);
 }
 
+/* 404 */
+
 .error-page {
-    text-align: center;
-    margin-top: 100px;
+  max-width: 600px;
+  margin: 100px auto 0;
+  text-align: center;
+  padding: 20px;
 }
 
 .error-page h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 .error-page p {
-    margin-bottom: 20px;
-    color: var(--text-muted);
+  margin-bottom: 20px;
+  color: var(--text-muted);
 }
 
-/* Responsive */
+/* RESPONSIVE */
 
 @media (max-width: 600px) {
+
+  .container {
+    padding: 0 15px;
+  }
+
   .nav-flex {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .hero-banner {
+    padding: 30px 20px;
+  }
+
+  .hero-banner h1 {
+    font-size: 1.5rem;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box select,
+  .search-box .btn {
+    width: 100%;
   }
 
   .card-footer {

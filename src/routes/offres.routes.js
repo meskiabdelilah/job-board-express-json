@@ -8,7 +8,18 @@ const offres = JSON.parse(data);
 
 router.get("/", (req, res) => {
     res.render("offres", {offres: offres});
-})
+});
+
+router.get("/:id", (req, res) => {
+    const id = Number(req.params.id);
+    const offre = offres.find(offre => offre.id === id);
+    
+    if (!offre) {
+        return res.status(404).render("404");
+    }
+
+    res.render("offre-detail", {offre: offre});
+});
 
 
 
